@@ -1,6 +1,41 @@
+using GameStore_API.Dtos;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello Hamid Welcome to C# Language's Code! didi you got it");
+List<GameDtos> games = [
+    new (
+        1,
+        "PUBG Mobile",
+        "Fighting",
+        20.20M,
+        new DateOnly(1992, 5, 5)
+    ),
+      new (
+        2,
+        "PUBG Mobil2",
+        "Fighting",
+        20.20M,
+        new DateOnly(1992, 5, 5)
+    ),
+       new (
+        3,
+        "PUBG Mobile3",
+        "Fighting",
+        20.20M,
+        new DateOnly(1992, 5, 5)
+    ),
+       new (
+        4,
+        "PUBG Mobile4",
+        "Fighting",
+        20.20M,
+        new DateOnly(1992, 5, 5)
+    ),
+
+];
+
+app.MapGet("games", () => games);
+app.MapGet("/", () => "Hello World!");
 
 app.Run();
