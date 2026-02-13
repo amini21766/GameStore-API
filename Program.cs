@@ -35,7 +35,14 @@ List<GameDtos> games = [
 
 ];
 
+// GET / All Games
 app.MapGet("games", () => games);
+
+// GET / A Specific Game
+app.MapGet("games/{id}", (int id) => games.Find(games => games.Id == id));
+
+
+// GET / the depault URL
 app.MapGet("/", () => "Hello World!");
 
 app.Run();
