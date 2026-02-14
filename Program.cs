@@ -42,7 +42,12 @@ string GETGameEndPointName = "GETGame";
 app.MapGet("games", () => games);
 
 // GET / A Specific Game
-app.MapGet("games/{id}", (int id) => games.Find(games => games.Id == id)).WithName(GETGameEndPointName);
+app.MapGet("games/{id}", (int id) =>
+    {
+        GameDtos? game = games.Find(game => game.Id == id);
+        return game is null ? Results.NotFound() : Results.Ok(game);
+        })
+        .WithName(GETGameEndPointName);
 
 // POST / Posting A Game
 app.MapPost("games", (CreateGameDto newGame) => {
@@ -77,6 +82,8 @@ app.MapPut("games/{id}", (int id,UpdateGameDto updateGame) =>
 app.MapDelete("games/{id}", (int id) =>
 {
     games.RemoveAll(game => game.Id == id);
+
+    return Results.NoContent();
 }
 );
 
