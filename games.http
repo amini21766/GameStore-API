@@ -2,7 +2,7 @@ GET http://localhost:5205/games
 
 
 ###
-GET http://localhost:5205/games/4
+GET http://localhost:5205/games/2
 
 
 ###
@@ -14,4 +14,17 @@ Content-Type: application/json
     "genre": "Army Fitting",
     "price": 20.2,
     "releaseDate": "2019-3-8"
+}
+
+
+###
+
+PUT http://localhost:5205/games/2
+Content-Type: application/json
+
+{
+    "name": "FootBall",
+    "genre": "Entertainment",
+    "price": 20000.5,
+    "releaseDate": "1400, 01, 01"
 }
