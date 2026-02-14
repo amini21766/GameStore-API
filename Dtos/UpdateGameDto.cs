@@ -1,8 +1,8 @@
 namespace GameStore_API.Dtos;
 
-public record class GameDtos(
-    int Id,
+public record class UpdateGameDto(
     string Name, 
     string Genre, 
     decimal Price, 
-    DateOnly RelaseDate);       
+    DateOnly RelaseDate
+);

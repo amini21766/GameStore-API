@@ -49,7 +49,7 @@ app.MapPost("games", (CreateGameDto newGame) => {
 
     GameDtos game = new (
         games.Count +1 ,
-        newGame.Name,
+        newGame.Name,                       
         newGame.Genre,
         newGame.Price,
         newGame.RelaseDate);
