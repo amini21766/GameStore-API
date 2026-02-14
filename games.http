@@ -2,7 +2,7 @@ GET http://localhost:5205/games
 
 
 ###
-GET http://localhost:5205/games/2
+GET http://localhost:5205/games/1
 
 
 ###
@@ -28,3 +28,7 @@ Content-Type: application/json
     "price": 20000.5,
     "releaseDate": "1400, 01, 01"
 }
+
+###
+
+DELETE  http://localhost:5205/games/1
